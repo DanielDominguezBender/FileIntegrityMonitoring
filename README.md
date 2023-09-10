@@ -104,15 +104,15 @@ To stop the monitoring press Ctrl + C to interrupt the script.
 
 Let's take a look on how this scnerio work. On next image you will see how the "baseline.txt" file still does not exist.
 
-![image1](image1.png)
+![image1](imgs/image1.png)
 
 First we launch the script. As you can see the "baseline.txt" file is created, storing inside a HASHED information.
 
-![image2](image2.png)
+![image2](imgs/image2.png)
 
 After the script is executed, it checks every 15 seconds if any changes have been done on the "users.txt" file. Let's change the user OSKAR to JUAN and see if we get notified.
 
-![image3](image3.png)
+![image3](imgs/image3.png)
 
 Note: during the test I decided to add the tes file in a test folder to keep a clearer structurer.
 
