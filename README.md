@@ -62,7 +62,7 @@ def calculate_hash(file_path):
     return sha256_hash.hexdigest()
 ```
 Afterwards it defines the function to create the baseline (It calculates the SHA-256 hash of the file using the calculate_hash function and stores the hash value in the baseline file.):
-```
+```python
 def create_baseline(file_path, baseline_file):
     # Calculate the baseline hash value and store it in a baseline file
     baseline_hash = calculate_hash(file_path)
@@ -70,7 +70,7 @@ def create_baseline(file_path, baseline_file):
         f.write(baseline_hash)
 ```
 Then it defines the function in charge for the integrity check:
-```
+```python
 def check_integrity(file_path, baseline_file):
     # Compare the current hash value with the baseline hash value
     current_hash = calculate_hash(file_path)
