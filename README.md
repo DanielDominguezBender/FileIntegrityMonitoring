@@ -45,13 +45,13 @@ As this is a very basic script it has a simple monitoring function. Once launche
 ## Script explanation
 
 First let's import the needed libraries:  
-```
+```python
 import hashlib
 import os
 import time
 ```
 Then it defines the function to calculate the Hash:
-```
+```python
 def calculate_hash(file_path):
     # Calculate the SHA-256 hash of a file
     sha256_hash = hashlib.sha256()
