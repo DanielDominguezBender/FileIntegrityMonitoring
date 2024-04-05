@@ -87,7 +87,7 @@ Then, we enter a continuous monitoring loop (while True) that runs indefinitely 
 First of all make sure you have Python installed in your system (and that the 'python' command should be set in the system's PATH).
 To run the File Integrity Monitoring (FIM) script on a terminal, follow these steps:
 
-Step 1: Save the Script in a file with a .py extension. For example, I saved it as 'fim.py'.
+Step 1: Save the Script in a file with a ".py" extension. For example, I saved it as 'fim.py'.
 
 Step 2: Open the Terminal or command prompt on your computer. Ensure that you are in the directory where you saved the script.
 
@@ -102,7 +102,7 @@ To stop the monitoring press Ctrl + C to interrupt the script.
 
 ## Visual example
 
-Let's take a look on how this scnerio work. On next image you will see how the "baseline.txt" file still does not exist.
+Let's take a look on how this scenario work. On next image you will see how the "baseline.txt" file still does not exist.
 
 ![image1](imgs/image1.png)
 
@@ -114,7 +114,7 @@ After the script is executed, it checks every 15 seconds if any changes have bee
 
 ![image3](imgs/image3.png)
 
-Note: during the test I decided to add the tes file in a test folder to keep a clearer structurer.
+Note: during the test I decided to add the test file in a test folder to keep a clearer structurer.
 
 So as you can see, a FIM is a really cool feature if you want to have a digital watchdog that keeps an eye on your files and folders.
 
