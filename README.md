@@ -1,6 +1,6 @@
 # File Integrity Monitoring
 
-## Description:
+## Description
 A simple example of a File Integrity Monitoring script
 
 ## What is FIM?
