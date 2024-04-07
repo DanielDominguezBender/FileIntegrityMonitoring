@@ -40,7 +40,7 @@ By employing File Integrity Monitoring, organizations can enhance their security
 
 ## What does my script do?
 
-As this is a very basic script it has a simple monitoring function. Once launched it checks every 15 seconds if any chnages have been done on the "users.txt" file.
+As this is a very basic script it has a simple monitoring function. Once launched it checks every 15 seconds if any chnages have been done on the `users.txt` file.
 
 ## Script explanation
 
@@ -61,7 +61,7 @@ def calculate_hash(file_path):
             sha256_hash.update(chunk)
     return sha256_hash.hexdigest()
 ```
-Afterwards it defines the function to create the baseline (It calculates the SHA-256 hash of the file using the calculate_hash function and stores the hash value in the baseline file.):
+Afterwards it defines the function to create the baseline (it calculates the `sha-256` hash of the file using the `calculate_hash` function and stores the hash value in the baseline file.):
 ```python
 def create_baseline(file_path, baseline_file):
     # Calculate the baseline hash value and store it in a baseline file
@@ -78,39 +78,42 @@ def check_integrity(file_path, baseline_file):
         baseline_hash = f.read().strip()
     return current_hash == baseline_hash
 ```
-In the MAIN it is defined the path to the file we want to monitor (monitored_file) and the name of the baseline file (baseline_file). If the baseline file doesn't exist, we create it by calling the create_baseline function.
+In the MAIN it is defined the path to the file we want to monitor (`monitored_file`) and the name of the baseline file (`baseline_file`). If the baseline file doesn't exist, we create it by calling the `create_baseline` function.
 
-Then, we enter a continuous monitoring loop (while True) that runs indefinitely until interrupted by the user (e.g., pressing Ctrl + C). Inside the loop, we periodically check the file integrity by calling the check_integrity function. If the integrity check fails (file has been modified), it prints a message indicating a violation. In a real-world scenario, you would implement your alerting and incident response logic here. If the integrity check passes (file has not been modified), it prints a message indicating the check was successful.
+Then, we enter a continuous monitoring loop (while True) that runs indefinitely until interrupted by the user (e.g., pressing `Ctrl + C`). Inside the loop, we periodically check the file integrity by calling the `check_integrity` function. If the integrity check fails (file has been modified), it prints a message indicating a violation. In a real-world scenario, you would implement your alerting and incident response logic here. If the integrity check passes (file has not been modified), it prints a message indicating the check was successful.
 
 ## How to run it?
 
-First of all make sure you have Python installed in your system (and that the 'python' command should be set in the system's PATH).
+First of all make sure you have Python installed in your system (and that the `python` command should be set in the system's PATH).
 To run the File Integrity Monitoring (FIM) script on a terminal, follow these steps:
 
-Step 1: Save the Script in a file with a ".py" extension. For example, I saved it as 'fim.py'.
+Step 1: Save the Script in a file with a `.py` extension. For example, I saved it as `fim.py`.
 
 Step 2: Open the Terminal or command prompt on your computer. Ensure that you are in the directory where you saved the script.
 
 Step 3: Run the Script using the following command:  
-Windows -> python fim.py  
-MacOS / Linux -> python3 fim.py  
+`Windows -> python fim.py`<br>
+`MacOS / Linux -> python3 fim.py`
 
-Step 4: Observe the Output. The script will start running and continuously monitor the file specified in the monitored_file variable (I set the timer on 15 seconds refresh). It will check the file's integrity periodically and display messages indicating whether the integrity check passed or if a violation was detected.
+>[!NOTE]
+>In MacOS / Linux y used `python3` because it's the Python version I have installed on my computer.
+
+Step 4: Observe the Output. The script will start running and continuously monitor the file specified in the `monitored_file` variable (I set the timer to 15 seconds to refresh). It will check the file's integrity periodically and display messages indicating whether the integrity check passed or if a violation was detected.
 
 You can leave the terminal running to maintain the monitoring process.
-To stop the monitoring press Ctrl + C to interrupt the script.
+To stop the monitoring press `Ctrl + C` to interrupt the script.
 
 ## Visual example
 
-Let's take a look on how this scenario work. On next image you will see how the "baseline.txt" file still does not exist.
+Let's take a look on how this scenario work. On next image you will see how the `baseline.txt` file still does not exist.
 
 ![image1](imgs/image1.png)
 
-First we launch the script. As you can see the "baseline.txt" file is created, storing inside a HASHED information.
+First we launch the script. As you can see the `baseline.txt` file is created, storing inside a HASHED information.
 
 ![image2](imgs/image2.png)
 
-After the script is executed, it checks every 15 seconds if any changes have been done on the "users.txt" file. Let's change the user OSKAR to JUAN and see if we get notified.
+After the script is executed, it checks every 15 seconds if any changes have been done on the `users.txt` file. Let's change the user OSKAR for JUAN and see if we get any notification.
 
 ![image3](imgs/image3.png)
 
